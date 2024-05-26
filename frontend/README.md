@@ -1,30 +1,54 @@
-# React + TypeScript + Vite
+# Simple node Card game React frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To run app first needed to have, or install <strong>Nodejs</strong> (20 + version)
 
-Currently, two official plugins are available:
+Command to run in root of applications to install dependencies:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```sh
+npm install
+```
+or
+```sh
+yarn install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Run project in development mode
+then to run server:
+```sh
+npm run dev
+```
+or
+```sh
+yarn dev
+```
+Link to application in browser:
+
+<h6>http://localhost:5173/</h6>
+
+### Run project in production mode
+runs next build to build the application for production usage:
+```sh
+npm run build
+```
+or
+```sh
+yarn build
+```
+
+runs next start to start React project:
+```sh
+npm run dev
+```
+or
+```sh
+yarn dev
+```
+
+## Running Tests
+```sh
+npm run test
+```
+or
+```sh
+yarn test
+```
