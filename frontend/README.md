@@ -1,4 +1,4 @@
-# Simple node Card game React frontend
+# Simple Card game React frontend app
 
 To run app first needed to have, or install <strong>Nodejs</strong> (20 + version)
 
