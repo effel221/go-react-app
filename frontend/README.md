@@ -35,15 +35,6 @@ or
 yarn build
 ```
 
-runs next start to start React project:
-```sh
-npm run dev
-```
-or
-```sh
-yarn dev
-```
-
 ## Running Tests
 ```sh
 npm run test
