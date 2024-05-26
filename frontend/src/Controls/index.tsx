@@ -18,7 +18,6 @@ const Controls = () => {
       const cards = await response.json();
       dispatch(setCardsValue(cards))
   }
-  const onSortDescKeyDown:KeyboardEventHandler = (e) => onEnterSpaceDown(e, sortAsc)
   const submit = async () => {
       const response = await fetch(`${serverUrl}/postCard`,{
           method: "POST",
@@ -26,14 +25,13 @@ const Controls = () => {
       });
       console.log(await response.json())
   }
-  const onSubmitKeyDown:KeyboardEventHandler = (e) => onEnterSpaceDown(e, submit)
   return (
-     <aside>
+     <section>
          <h2>Controls</h2>
          <button onKeyDown={onSortAscKeyDown} onClick={sortAsc}>Sort Asc</button>
-         <button onKeyDown={onSortDescKeyDown} onClick={sortDesc}>Sort Desc</button>
-         <button onKeyDown={onSubmitKeyDown} onClick={submit}>Submit</button>
-     </aside>
+         <button onKeyDown={onSortAscKeyDown} onClick={sortDesc}>Sort Desc</button>
+         <button onClick={submit}>Submit</button>
+     </section>
   );
 }
 

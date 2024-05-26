@@ -7,7 +7,7 @@ const Details: React.FunctionComponent = () => {
   return (
      <section>
          <h2 id="cards-details">Details</h2>
-         {selectedCardData && <ul aria-hidden="true" aria-labelledby="cards-details">
+         {selectedCardData && <ul>
            <li><strong>Real name:</strong> {selectedCardData.realName}</li>
            <li><strong>Player name:</strong> {selectedCardData.playerName}</li>
            <li><strong>Asset:</strong> {selectedCardData.asset}</li>
