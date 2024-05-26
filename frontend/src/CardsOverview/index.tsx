@@ -1,12 +1,10 @@
 import {getCardsValue} from "../stores/cardsStore";
 import Card from "../Base/Card";
-import {useDataFetch} from "../lib/useDataFetch";
 import {useAppSelector} from "../lib/hooks";
 
 
 const CardsOverview = () => {
-  useDataFetch()
-  const currentCardData = useAppSelector(getCardsValue)
+  const currentCardData = useAppSelector(getCardsValue);
   return (
      <section>
         <h2>Overview</h2>

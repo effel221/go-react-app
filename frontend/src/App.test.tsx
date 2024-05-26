@@ -9,4 +9,4 @@ describe('App', () => {
     })
 })
 
-export default App
+

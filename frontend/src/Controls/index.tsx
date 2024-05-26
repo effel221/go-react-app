@@ -28,12 +28,12 @@ const Controls = () => {
   }
   const onSubmitKeyDown:KeyboardEventHandler = (e) => onEnterSpaceDown(e, submit)
   return (
-     <section>
+     <aside>
          <h2>Controls</h2>
          <button onKeyDown={onSortAscKeyDown} onClick={sortAsc}>Sort Asc</button>
          <button onKeyDown={onSortDescKeyDown} onClick={sortDesc}>Sort Desc</button>
          <button onKeyDown={onSubmitKeyDown} onClick={submit}>Submit</button>
-     </section>
+     </aside>
   );
 }
 
