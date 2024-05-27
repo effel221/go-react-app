@@ -1,6 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import CardsOverview from "./index";
 import * as useSelectorOutput from "../lib/hooks";
+import * as fetchResult from "../lib/useDataFetch";
 import {describe, it, vi, afterEach, expect, beforeEach} from 'vitest';
 import StoreProvider from "../StoreProvider";
 
@@ -17,8 +18,10 @@ describe('CardsOverview', () => {
         vi.restoreAllMocks()
     })
     it('renders the CardsOverview component with mock data', () => {
+        const fetch = vi.spyOn(fetchResult, 'useDataFetch');
         const spy = vi.spyOn(useSelectorOutput, 'useAppSelector');
         spy.mockImplementationOnce(() => mockCard);
+        fetch.mockImplementationOnce(() => mockCard);
         render(<StoreProvider><CardsOverview/></StoreProvider>)
         const heading = screen.getByRole('heading', { level: 2 });
         const items = screen.getAllByRole("listitem");

@@ -1,9 +1,11 @@
 import {getCardsValue} from "../stores/cardsStore";
 import Card from "../Base/Card";
 import {useAppSelector} from "../lib/hooks";
+import {useDataFetch} from "../lib/useDataFetch";
 
 
 const CardsOverview = () => {
+  useDataFetch();
   const currentCardData = useAppSelector(getCardsValue);
   return (
      <section>
