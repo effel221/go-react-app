@@ -21,6 +21,7 @@ const CardsOverview = () => {
                  currentCardData={serverCardData}
              />)}
         </ul>}
+         {!serverCardData || serverCardData.length === 0 && <p> No data provided</p>}
      </section>
   );
 }
