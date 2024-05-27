@@ -3,11 +3,21 @@ import {getCardsValue} from "../stores/cardsStore";
 import Card from "../Base/Card";
 import {useAppSelector} from "../lib/hooks";
 import {useDataFetch} from "../lib/useDataFetch";
+import {useEffect, useState} from "react";
+import {CardInterfaceWithSelected} from "../lib/interfaces";
 
 
 const CardsOverview = () => {
   useDataFetch();
-  const currentCardData = useAppSelector(getCardsValue);
+  const serverCardData = useAppSelector(getCardsValue);
+  const [currentCardData, setCurrentCardData] = useState<CardInterfaceWithSelected[] | []>([]);
+  useEffect(()=>{
+      const updatedCurrentCardData:CardInterfaceWithSelected[] = serverCardData && serverCardData.map(card=>({
+         ...card,
+         selected: false
+      })) || [];
+      setCurrentCardData(updatedCurrentCardData)
+  },[serverCardData])
   return (
      <section className={"cards-overview"}>
         <h2>Overview</h2>

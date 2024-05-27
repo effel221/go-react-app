@@ -4,8 +4,12 @@ export interface CardInterface {
     asset: string
 }
 
+export interface CardInterfaceWithSelected extends CardInterface {
+   selected?: boolean
+}
+
 export interface CardPropsInterface {
-   card: CardInterface
+   card: CardInterfaceWithSelected
 }
 
 export interface CardStoreInterface {
