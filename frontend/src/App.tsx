@@ -6,11 +6,15 @@ import Details from "./Details";
 
 const App = () => {
   return (
-     <main role="main">
-         <Details/>
-         <Controls/>
-         <CardsOverview/>
-     </main>
+      <div className={"body-wrapper"}>
+         <header>
+            <Details/>
+            <Controls/>
+         </header>
+         <main role="main">
+            <CardsOverview/>
+         </main>
+      </div>
   );
 }
 

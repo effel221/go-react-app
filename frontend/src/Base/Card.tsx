@@ -12,9 +12,11 @@ const Card = ({card}:CardPropsInterface) => {
     const onKeyDown:KeyboardEventHandler = (e) => onEnterSpaceDown(e, setSelectedCard)
     return (
         <li onClick={setSelectedCard} onKeyDown={onKeyDown} tabIndex={0}>
-            <p>{realName}</p>
-            <p>{playerName}</p>
-            <p>{asset}</p>
+            <article>
+                <p><strong>Real name:</strong> {realName}</p>
+                <p><strong>Player name:</strong> {playerName}</p>
+                <p><strong>Asset:</strong> {asset}</p>
+            </article>
         </li>
     );
 }

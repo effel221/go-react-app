@@ -1,0 +1,9 @@
+.cards-details {
+    flex: 1;
+    margin: 0 15px 0 0 ;
+}
+
+.cards-details-list li {
+    font-size: 18px;
+    padding: 3px;
+}

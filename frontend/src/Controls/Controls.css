@@ -1,0 +1,21 @@
+.controls {
+    width: 250px;
+    margin-left: auto;
+}
+
+.controls-sorting {
+  display: flex;
+  margin: 0 0 10px;
+}
+
+.controls-sorting button {
+    width: 49%;
+}
+
+.controls-submit button {
+    width: 100%;
+}
+
+.controls-sorting-desc {
+    margin-left: auto;
+}
