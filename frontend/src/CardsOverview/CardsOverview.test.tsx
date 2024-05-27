@@ -9,7 +9,8 @@ describe('CardsOverview', () => {
     const mockCard = [{
         realName: 'test name',
         playerName: 'test playerName',
-        asset: 'test asset'
+        asset: 'test asset',
+        selected: true
     }]
     beforeEach(() => {
       vi.clearAllMocks();
@@ -17,16 +18,17 @@ describe('CardsOverview', () => {
     afterEach(() => {
         vi.restoreAllMocks()
     })
-    it('renders the CardsOverview component with mock data', () => {
+    it('renders the CardsOverview component with mock data with selected card', () => {
         const fetch = vi.spyOn(fetchResult, 'useDataFetch');
         const spy = vi.spyOn(useSelectorOutput, 'useAppSelector');
         spy.mockImplementationOnce(() => mockCard);
         fetch.mockImplementationOnce(() => mockCard);
-        render(<StoreProvider><CardsOverview/></StoreProvider>)
+        const { container } = render(<StoreProvider><CardsOverview/></StoreProvider>)
         const heading = screen.getByRole('heading', { level: 2 });
         const items = screen.getAllByRole("listitem");
         expect(heading.innerHTML).toBe('Overview');
         expect(items.length).toBe(1);
+        expect(container.querySelector('.card-selected')).toBeInTheDocument();
     })
 })
 
