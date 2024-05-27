@@ -43,6 +43,7 @@ const Controls = () => {
             <h2>Controls</h2>
             <div className={"controls-sorting"}>
                 <button
+                    type="button"
                     onKeyDown={onSortAscKeyDown}
                     onClick={sortAsc}>
                     Sort Asc
@@ -50,12 +51,13 @@ const Controls = () => {
                 <button
                     className={"controls-sorting-desc"}
                     onKeyDown={onSortDescKeyDown}
+                    type="button"
                     onClick={sortDesc}>
                     Sort Desc
                 </button>
             </div>
             <div className={"controls-submit"}>
-               <button onKeyDown={onSubmitKeyDown} onClick={onSubmit}>Submit</button>
+               <button type="button" onKeyDown={onSubmitKeyDown} onClick={onSubmit}>Submit</button>
             </div>
         </aside>
     );
