@@ -9,7 +9,8 @@ export interface CardInterfaceWithSelected extends CardInterface {
 }
 
 export interface CardPropsInterface {
-   card: CardInterfaceWithSelected
+   card: CardInterfaceWithSelected,
+   currentCardData: CardInterfaceWithSelected[]
 }
 
 export interface CardStoreInterface {

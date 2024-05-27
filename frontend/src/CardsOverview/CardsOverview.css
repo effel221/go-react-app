@@ -20,6 +20,12 @@
     background: #D8F3FF;
 }
 
+.cards-overview-list .card-selected {
+    background-image: linear-gradient(#3D94D9, #0067B9);
+    border-color: #006DBC;
+    outline: none;
+}
+
 .cards-overview-list li:hover {
     background-image: linear-gradient(#51A9EE, #147BCD);
     border-color: #1482D0;

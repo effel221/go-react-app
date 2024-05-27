@@ -8,7 +8,8 @@ describe('Card', () => {
     const mockCard = {
         realName: 'test name',
         playerName: 'test playerName',
-        asset: 'test asset'
+        asset: 'test asset',
+        selected: false
     }
     beforeEach(() => {
       vi.clearAllMocks();
@@ -18,7 +19,10 @@ describe('Card', () => {
     })
     it('renders the Card component with mock data', () => {
         const spy = vi.spyOn(useDispatchOutput, 'useAppDispatch');
-        render(<StoreProvider><Card card={mockCard}/></StoreProvider>)
+        render(<StoreProvider><Card
+            card={mockCard}
+            currentCardData={[mockCard]}/>
+        </StoreProvider>)
         const liItem = screen.getAllByRole("listitem");
         expect(liItem.length).toBe(1);
         fireEvent.click(liItem[0]);
