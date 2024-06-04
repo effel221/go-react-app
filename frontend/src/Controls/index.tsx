@@ -1,35 +1,20 @@
 import './Controls.css'
 import {useAppDispatch, useAppSelector} from "../lib/hooks";
-import {getCurrentCard, setCardsValue} from "../stores/cardsStore";
+import {getCurrentCard} from "../stores/cardsStore";
 import {serverUrl} from "../../config";
 import {KeyboardEventHandler} from "react";
-import {onEnterSpaceDown} from "../lib/utils";
-import {CardInterface} from "../lib/interfaces";
+import {onEnterSpaceDown, sortingAct} from "../lib/utils";
+
 
 
 const Controls = () => {
     const dispatch = useAppDispatch();
     const selectedCardData = useAppSelector(getCurrentCard);
-    const formatData = (cardData:CardInterface[]) => {
-        return cardData.map((item:CardInterface)=>({
-            ...item,
-            selected: item.realName === selectedCardData?.realName
-        })) || [];
-    }
-    const sortAsc = async () => {
-        const response = await fetch(`${serverUrl}/getCardsSorted`);
-        const cards = await response.json();
-        const formattedData = formatData(cards)
-        dispatch(setCardsValue(formattedData))
-    }
+
+    const sortAsc = async () => sortingAct(`${serverUrl}/getCardsSorted`, dispatch, selectedCardData)
     const onSortAscKeyDown:KeyboardEventHandler = (e) => onEnterSpaceDown(e, sortAsc)
-    const sortDesc = async () => {
-        const response = await fetch(`${serverUrl}/getCardsSorted?sort=desc`);
-        const cards = await response.json();
-        const formattedData = formatData(cards)
-        dispatch(setCardsValue(formattedData))
-    }
-    const onSortDescKeyDown:KeyboardEventHandler = (e) => onEnterSpaceDown(e, sortAsc)
+    const sortDesc = async () => sortingAct(`${serverUrl}/getCardsSorted?sort=desc`, dispatch, selectedCardData)
+    const onSortDescKeyDown:KeyboardEventHandler = (e) => onEnterSpaceDown(e, sortDesc)
     const onSubmit = async () => {
         const response = await fetch(`${serverUrl}/postCard`,{
             method: "POST",
