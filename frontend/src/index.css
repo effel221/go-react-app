@@ -79,7 +79,7 @@ button:focus {
 
 button:focus-visible {
   box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
-  outline: 3px solid red;
+  outline: 2px solid #AA2577;
 }
 
 strong {

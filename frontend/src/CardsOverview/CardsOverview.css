@@ -43,6 +43,11 @@
     outline: none;
 }
 
+.cards-overview-list li:focus-visible {
+    box-shadow: rgba(131, 192, 253, 0.5) 0 0 0 3px;
+    outline: 2px solid #AA2577;
+}
+
 .cards-overview-list li article {
     width: 100%;
     background: white;
